@@ -1,0 +1,72 @@
+body {
+  user-select: none; /* Evita la selección de texto */
+  display: flex;
+  background-color: #0a1633;
+}
+
+/* Ocultar elementos */
+.hidden {
+  display: none;
+}
+
+/* Estilos para los botones de grupo (WE, EN, TRE, GA) */
+.group-btn1 {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 420px;
+  left: 97px;
+  img {
+    width: 75px;
+  }
+}
+.group-btn2 {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  img {
+    width: 80px;
+  }
+}
+.group-btn3 {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  img {
+    width: 80px;
+  }
+}
+.group-btn4 {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  img {
+    width: 80px;
+  }
+}
+
+/* Estilos para el botón de reinicio */
+#restart-btn {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+}
+.logo_campamento {
+  img {
+    width: 530px;
+  }
+}
+#phrase {
+  display: none;
+} /* Oculta la frase */
