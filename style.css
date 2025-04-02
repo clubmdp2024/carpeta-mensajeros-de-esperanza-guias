@@ -1,12 +1,12 @@
 body {
   user-select: none; /* Evita la selección de texto */
-  background-image: url('/image/backgroud\ 2.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh; /* Hace que el fondo ocupe toda la pantalla */
-    overflow: hidden; /* Evita el scroll */
-    margin: 0; /* Elimina márgenes predeterminados */
+  background-image: url("/image/backgroud\ 2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Hace que el fondo ocupe toda la pantalla */
+  overflow: hidden; /* Evita el scroll */
+  margin: 0; /* Elimina márgenes predeterminados */
 }
 .titulo_principal {
   text-align: center;
@@ -131,6 +131,66 @@ body {
     transition: background-color 0.4s ease;
     &:hover {
       background-color: #006633;
+    }
+  }
+}
+
+
+@media (max-width: 1366px) {
+  /* Estilos para pantallas de 1366px o menores */
+  .logo_campamento {
+    position: absolute;
+    top: 40px;
+    img {
+      width: 430px;
+    }
+  }
+  .group-btn1 {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 62%;
+    left: 5%;
+    img {
+      width: 65px;
+    }
+  }
+  .group-btn2 {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 62%;
+    left: 10.5%;
+    img {
+      width: 70px;
+    }
+  }
+  .group-btn3 {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    left: 15.4%;
+    img {
+      width: 96.5px;
+    }
+  }
+  .group-btn4 {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 62%;
+    left: 21.8%;
+    img {
+      width: 76px;
     }
   }
 }
