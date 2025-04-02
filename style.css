@@ -1,16 +1,16 @@
 body {
   user-select: none; /* Evita la selección de texto */
-  display: flex;
-  background-color: #0a1633;
-  justify-content: center;
-  align-items: center;
+  background-image: url('/image/backgroud\ 2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Hace que el fondo ocupe toda la pantalla */
+    overflow: hidden; /* Evita el scroll */
+    margin: 0; /* Elimina márgenes predeterminados */
 }
 .titulo_principal {
-  color: white;
-  font-size: 20px;
   text-align: center;
   margin-top: 20px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 /* Ocultar elementos */
 .hidden {
@@ -24,8 +24,8 @@ body {
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 420px;
-  left: 574px;
+  top: 70%;
+  left: 6%;
   img {
     width: 75px;
   }
@@ -36,8 +36,8 @@ body {
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 420px;
-  left: 662px;
+  top: 70%;
+  left: 11.7%;
   img {
     width: 86px;
   }
@@ -48,8 +48,8 @@ body {
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 409px;
-  left: 746.5px;
+  top: 68.6%;
+  left: 17.2%;
   img {
     width: 114px;
   }
@@ -60,8 +60,8 @@ body {
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 422px;
-  left: 854px;
+  top: 70.6%;
+  left: 24.2%;
   img {
     width: 93px;
   }
@@ -91,6 +91,8 @@ body {
   }
 }
 .logo_campamento {
+  position: absolute;
+  top: 80px;
   img {
     width: 530px;
   }
@@ -99,17 +101,19 @@ body {
   display: none;
 } /* Oculta la frase */
 .quiz-container {
-  background-color: #0a1633;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 40%;
-  height: 100%;
+  width: 300px;
+  height: 300px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 30%;
+  left: 71%;
+  background-color: #192847;
   p {
     color: white;
     font-size: 20px;

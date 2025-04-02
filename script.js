@@ -15,32 +15,12 @@ const questions = {
       options: ["Cali", "Medellín", "Bogotá", "Cartagena"],
       answer: "Bogotá",
     },
-    {
-      q: "¿Cuánto es 2 + 2?",
-      options: ["3", "4", "5", "6"],
-      answer: "4",
-    },
-    {
-      q: "¿Qué color resulta de mezclar azul y amarillo?",
-      options: ["Verde", "Rojo", "Naranja", "Morado"],
-      answer: "Verde",
-    },
   ]),
   EN: shuffleArray([
     {
       q: "¿Cuántos días tiene una semana?",
       options: ["5", "6", "7", "8"],
       answer: "7",
-    },
-    {
-      q: "¿Cuál es el océano más grande del mundo?",
-      options: ["Atlántico", "Índico", "Ártico", "Pacífico"],
-      answer: "Pacífico",
-    },
-    {
-      q: "¿Cuál es el planeta más cercano al sol?",
-      options: ["Marte", "Venus", "Mercurio", "Tierra"],
-      answer: "Mercurio",
     },
   ]),
   TRE: shuffleArray([
@@ -49,32 +29,12 @@ const questions = {
       options: ["5", "6", "7", "8"],
       answer: "7",
     },
-    {
-      q: "¿Cuál es el metal principal en el acero?",
-      options: ["Aluminio", "Hierro", "Cobre", "Oro"],
-      answer: "Hierro",
-    },
-    {
-      q: "¿Cuántos huesos tiene el cuerpo humano?",
-      options: ["196", "206", "216", "226"],
-      answer: "206",
-    },
   ]),
   GA: shuffleArray([
     {
       q: "¿Qué gas respiramos para sobrevivir?",
       options: ["Dióxido de carbono", "Nitrógeno", "Oxígeno", "Helio"],
       answer: "Oxígeno",
-    },
-    {
-      q: "¿Qué animal es conocido como el rey de la selva?",
-      options: ["Elefante", "León", "Tigre", "Oso"],
-      answer: "León",
-    },
-    {
-      q: "¿Cuántos lados tiene un triángulo?",
-      options: ["2", "3", "4", "5"],
-      answer: "3",
     },
   ]),
 };
@@ -181,6 +141,20 @@ function restartGame() {
 
 // Cargar progreso si existe al abrir la página
 loadProgress();
+window.onload = function () {
+  loadProgress(); // Cargar progreso sin bloquear la página
+
+  setTimeout(() => {
+    Swal.fire({
+      title: "¡Bienvenido a la Carpeta Digital!",
+      text: "Aquí deberás responder preguntas para desbloquear accesos. ¡Buena suerte!",
+      icon: "info",
+      confirmButtonText: "Entendido",
+      backdrop: false, // Evita el efecto de oscurecer el fondo y cambiar el tamaño de la página
+    });
+  }, 500);
+};
+
 function openPage(url) {
   window.open(url, "_blank");
 }
