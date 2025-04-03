@@ -147,7 +147,7 @@ window.onload = function () {
   setTimeout(() => {
     Swal.fire({
       title: "¡Bienvenido a la Carpeta Digital!",
-      text: "Aquí deberás responder preguntas para desbloquear accesos. ¡Buena suerte!",
+      text: "Aptitud y actitud son dos palabras que guardan una relación intrínseca; la primera nos habla de los dones y talentos (capacidades) con las que nuestro Padre nos dotó, la otra nos habla de la disposición con la que ejercemos dichas capacidades. Es por eso que tu entrega, mi entrega, nuestra entrega dependen de poner al servicio de Dios tantos dones y talentos con la mejor disposición para que la obra del Señor sea llevada a cabo en el mundo entero.Con esta reseña en mente, te invitamos a resolver cada acertijo y descubrir el trasegar por la ruta de nuestra entrega a la misión como jóvenes en acción.Cada pregunta te dará la llave para descubrir MI - EN-TRE-GA como Club.",
       icon: "info",
       confirmButtonText: "Entendido",
       backdrop: false, // Evita el efecto de oscurecer el fondo y cambiar el tamaño de la página
