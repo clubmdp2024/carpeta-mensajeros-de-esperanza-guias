@@ -11,40 +11,62 @@ function shuffleArray(array) {
 const questions = {
   WE: shuffleArray([
     {
-      q: "¿Cuál es la capital de Colombia?",
-      options: ["Cali", "Medellín", "Bogotá", "Cartagena"],
-      answer: "Bogotá",
+      q: "Conforme al escrito esta de 1 Pedro 2:9 (Mas vosotros sois linaje escogido, real sacerdocio, nación santa, pueblo adquirido por Dios, para que anunciéis las virtudes de aquel que os llamó de las tinieblas a su luz admirable), se puede inferir que este hace referentica a:?",
+      options: [
+        "Nuestra Historia",
+        "B:Nuestra verdadera identidad",
+        "Todas Las Anteriores",
+      ],
+      answer: "Todas Las Anteriores",
     },
   ]),
   EN: shuffleArray([
     {
-      q: "¿Cuántos días tiene una semana?",
-      options: ["5", "6", "7", "8"],
-      answer: "7",
+      q: "Aptitud y actitud son dos palabras que guardan una relación intrínseca; la primera nos habla de los dones y talentos (capacidades) con las que nuestro Padre nos dotó, la otra nos habla de la disposición con la que ejercemos dichas capacidades. Es por eso que tu entrega, mi entrega, nuestra entrega dependen de poner al servicio de Dios tantos dones y talentos con la mejor disposición para que la obra del Señor sea llevada a cabo en el mundo entero.Con esta reseña en mente, te invitamos a resolver cada acertijo y descubrir el trasegar por la ruta de nuestra entrega a la misión como jóvenes en acción.Cada pregunta te dará la llave para descubrir MI - EN-TRE-GA como Club.",
+      options: [
+        "Nuestra Historia",
+        "Nuestra identidad",
+        "Nuestro Proposito, Mision y Vision en esta tierra",
+      ],
+      answer: [
+        "Nuestra identidad",
+        "Nuestro Proposito, Mision y Vision en esta tierra",
+      ],
     },
   ]),
   TRE: shuffleArray([
     {
-      q: "¿Cuántos continentes hay en el mundo?",
-      options: ["5", "6", "7", "8"],
-      answer: "7",
+      q: "De acuerdo al escrito esta de 1 corintios 14:40 (Hágase todo decentemente y con orden), Tanto en nuestra vida cotidiana como en el servicio en la obra del señor debemos procurar:",
+      options: [
+        "La Planificación y coordinacion",
+        "La perfección y puntualidad",
+        "La limpieza y pulcritud",
+      ],
+      answer: "La Planificación y coordinacion",
     },
   ]),
   GA: shuffleArray([
     {
-      q: "¿Qué gas respiramos para sobrevivir?",
-      options: ["Dióxido de carbono", "Nitrógeno", "Oxígeno", "Helio"],
-      answer: "Oxígeno",
+      q: "Aptitud y actitud son dos palabras que guardan una relación intrínseca; la primera nos habla de los dones y talentos (capacidades) con las que nuestro Padre nos dotó, la otra nos habla de la disposición con la que ejercemos dichas capacidades. Es por eso que tu entrega, mi entrega, nuestra entrega dependen de poner al servicio de Dios tantos dones y talentos con la mejor disposición para que la obra del Señor sea llevada a cabo en el mundo entero. Con esta reseña en mente, elige el escrito esta que mejor describe el pensamiento anterior:",
+      options: ["2 Corintios 12:15", "Lucas 10:20", "Colosenses 3:23-24", ],
+      answer: [
+        "2 Corintios 12:15",
+        "Colosenses 3:23-24",
+      ],
     },
   ]),
 };
 
-// Función para verificar respuesta
+// Función para verificar respuesta (ahora acepta múltiples respuestas correctas)
 function checkAnswer(selected, group, questionIndex) {
-  if (selected === questions[group][questionIndex].answer) {
+  const correctAnswer = questions[group][questionIndex].answer;
+  const isCorrect = Array.isArray(correctAnswer)
+    ? correctAnswer.includes(selected)
+    : selected === correctAnswer;
+
+  if (isCorrect) {
     questionIndex++;
     if (questionIndex >= questions[group].length) {
-      // Se desbloquea el botón y avanza al siguiente grupo
       unlockButton(group);
       updatePhrase(group);
       currentGroupIndex++;
@@ -52,7 +74,7 @@ function checkAnswer(selected, group, questionIndex) {
       if (currentGroupIndex < groups.length) {
         setTimeout(startQuiz, 500);
       } else {
-        document.getElementById("restart-btn").style.display = "block"; // Muestra botón de reinicio
+        document.getElementById("restart-btn").style.display = "block";
       }
     } else {
       loadQuestion(group, questionIndex);
@@ -63,11 +85,11 @@ function checkAnswer(selected, group, questionIndex) {
       text: "Inténtalo de nuevo.",
       icon: "error",
       confirmButtonText: "Reintentar",
+      backdrop: false,
     });
   }
 }
 
-// Carga una pregunta
 function loadQuestion(group, questionIndex) {
   const { q, options } = questions[group][questionIndex];
   let html = `<p>${q}</p>`;
@@ -77,7 +99,6 @@ function loadQuestion(group, questionIndex) {
   document.getElementById("quiz-container").innerHTML = html;
 }
 
-// Inicia el cuestionario con el grupo actual
 function startQuiz() {
   if (currentGroupIndex < groups.length) {
     document.getElementById("quiz-container").innerHTML = "";
@@ -85,7 +106,6 @@ function startQuiz() {
   }
 }
 
-// Actualiza la frase en la pantalla con los grupos desbloqueados
 function updatePhrase(group) {
   let phrase = "";
   groups.forEach((g, i) => {
@@ -96,12 +116,10 @@ function updatePhrase(group) {
   document.getElementById("phrase").textContent = phrase.trim();
 }
 
-// Función para cambiar de página cuando se hace clic en un botón desbloqueado
 function openPage(url) {
   window.location.href = url;
 }
 
-// Desbloquea el botón de un grupo completado
 function unlockButton(group) {
   const btn = document.getElementById(`${group.toLowerCase()}-btn`);
   if (btn) {
@@ -109,7 +127,6 @@ function unlockButton(group) {
   }
 }
 
-// Guarda el progreso del usuario en sessionStorage
 function saveProgress() {
   const progress = {
     currentGroupIndex: currentGroupIndex,
@@ -119,7 +136,6 @@ function saveProgress() {
   sessionStorage.setItem("quizProgress", JSON.stringify(progress));
 }
 
-// Carga el progreso del usuario al volver a la página
 function loadProgress() {
   const progress = JSON.parse(sessionStorage.getItem("quizProgress"));
   if (progress) {
@@ -133,41 +149,58 @@ function loadProgress() {
   startQuiz();
 }
 
-// Reinicia el juego borrando el progreso
 function restartGame() {
   sessionStorage.clear();
   location.reload();
 }
 
-// Cargar progreso si existe al abrir la página
 loadProgress();
 window.onload = function () {
-  loadProgress(); // Cargar progreso sin bloquear la página
-
+  loadProgress();
   setTimeout(() => {
     Swal.fire({
-      title: "¡Bienvenido a la Carpeta Digital!",
-      text: "Aptitud y actitud son dos palabras que guardan una relación intrínseca; la primera nos habla de los dones y talentos (capacidades) con las que nuestro Padre nos dotó, la otra nos habla de la disposición con la que ejercemos dichas capacidades. Es por eso que tu entrega, mi entrega, nuestra entrega dependen de poner al servicio de Dios tantos dones y talentos con la mejor disposición para que la obra del Señor sea llevada a cabo en el mundo entero.Con esta reseña en mente, te invitamos a resolver cada acertijo y descubrir el trasegar por la ruta de nuestra entrega a la misión como jóvenes en acción.Cada pregunta te dará la llave para descubrir MI - EN-TRE-GA como Club.",
+      title: `<span style="font-size: 1.3em; font-weight: bold; color: #007BFF;">
+        Te invitamos a conocer el <span style="color: #FF7F00;">ADN</span> de un <span style="color: #28a745;">Mensajero</span>
+      </span>`,
+      html: `
+        <p style="font-size: 1em;">
+          A través de cada acertijo descubrirás el trasegar por la ruta de nuestra entrega a la misión como jóvenes en acción.<br><br>
+          Cada pregunta será una llave que desbloquea una parte de la palabra 
+          <strong style="color:#007BFF;">MI</strong> - 
+          <strong style="color:#FF7F00;">EN</strong> - 
+          <strong style="color:#28a745;">TRE</strong> - 
+          <strong style="color:#e83e8c;">GA</strong>, que representa los pilares de nuestro Club:
+        </p>
+        <ul style="text-align: left; line-height: 1.5em; font-size: 0.95em; padding-left: 20px;">
+          <li><strong style="color:#007BFF;">MI</strong>: Mi compromiso personal con Dios.</li>
+          <li><strong style="color:#FF7F00;">EN</strong>: Entendimiento de mi propósito en la misión.</li>
+          <li><strong style="color:#28a745;">TRE</strong>: Trabajo en equipo con otros jóvenes.</li>
+          <li><strong style="color:#e83e8c;">GA</strong>: Ganas de servir con pasión y entrega total.</li>
+        </ul>
+        <p style="margin-top: 10px; font-size: 0.95em;">
+          ¡Prepárate para <strong>aprender, reflexionar</strong> y <strong>dar lo mejor de ti</strong>!
+        </p>
+      `,
       icon: "info",
       confirmButtonText: "Entendido",
-      backdrop: false, // Evita el efecto de oscurecer el fondo y cambiar el tamaño de la página
+      backdrop: false,
+      customClass: {
+        popup: "swal-wide",
+      },
     });
   }, 500);
 };
 
-function openPage(url) {
-  window.open(url, "_blank");
-}
 document.addEventListener("contextmenu", function (event) {
-  event.preventDefault(); // Bloquea clic derecho
+  event.preventDefault();
 });
 
 document.addEventListener("copy", function (event) {
-  event.preventDefault(); // Bloquea copiar
+  event.preventDefault();
 });
 
 document.addEventListener("cut", function (event) {
-  event.preventDefault(); // Bloquea cortar
+  event.preventDefault();
 });
 
 document.addEventListener("keydown", function (event) {
@@ -175,6 +208,6 @@ document.addEventListener("keydown", function (event) {
     event.ctrlKey &&
     (event.key === "c" || event.key === "x" || event.key === "u")
   ) {
-    event.preventDefault(); // Bloquea Ctrl + C, Ctrl + X y Ctrl + U (ver código fuente)
+    event.preventDefault();
   }
 });

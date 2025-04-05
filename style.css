@@ -1,13 +1,15 @@
 body {
-  user-select: none; /* Evita la selección de texto */
-  background-image: url("/image/backgroud\ 2.png");
+  user-select: none;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/image/backgroud 2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Hace que el fondo ocupe toda la pantalla */
-  overflow: hidden; /* Evita el scroll */
-  margin: 0; /* Elimina márgenes predeterminados */
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
 }
+
 .titulo_principal {
   text-align: center;
   margin-top: 20px;
@@ -105,15 +107,14 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 450px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
   position: absolute;
-  top: 30%;
+  top: 15%;
   left: 71%;
-  background-color: #192847;
   p {
     color: white;
     font-size: 20px;
@@ -121,6 +122,8 @@ body {
   }
   button {
     background-color: #f2a700;
+    width: 150px;
+    width: 280px;
     color: #ffffff;
     border: none;
     cursor: pointer;
@@ -134,7 +137,10 @@ body {
     }
   }
 }
-
+.swal-wide {
+  width: 500px !important; /* o ajusta a lo que necesites */
+  height: 600px !important; /* o ajusta a lo que necesites */
+}
 
 @media (max-width: 1366px) {
   /* Estilos para pantallas de 1366px o menores */
