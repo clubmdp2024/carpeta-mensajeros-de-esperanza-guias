@@ -142,61 +142,62 @@ body {
   height: 600px !important; /* o ajusta a lo que necesites */
 }
 
-@media (max-width: 1366px) {
-  /* Estilos para pantallas de 1366px o menores */
+/* Media Query para pantallas de 1366px de ancho o menos y 645px de alto o menos */
+@media (max-width: 1366px) and (max-height: 645px) { 
   .logo_campamento {
     position: absolute;
     top: 40px;
-    img {
-      width: 430px;
-    }
   }
+  .logo_campamento img {
+    width: 430px;
+  }
+
+  .group-btn1, .group-btn2, .group-btn3, .group-btn4 {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+  }
+
   .group-btn1 {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 62%;
+    top: 58%;
     left: 5%;
-    img {
-      width: 65px;
-    }
   }
+
+  .group-btn1 img {
+    width: 65px;
+  }
+
   .group-btn2 {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 62%;
+    top: 58%;
     left: 10.5%;
-    img {
-      width: 70px;
-    }
   }
+
+  .group-btn2 img {
+    width: 70px;
+  }
+
   .group-btn3 {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 60%;
+    top: 56.5%;
     left: 15.4%;
-    img {
-      width: 96.5px;
-    }
   }
+
+  .group-btn3 img {
+    width: 96.5px;
+  }
+
   .group-btn4 {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 62%;
+    top: 58.2%;
     left: 21.8%;
-    img {
-      width: 76px;
-    }
+  }
+
+  .group-btn4 img {
+    width: 76px;
+  }
+  .quiz-container {
+    top: 15%;
+    left: 68%;
   }
 }
+
