@@ -14,18 +14,18 @@ const questions = {
       q: "Conforme al escrito esta de 1 Pedro 2:9 (Mas vosotros sois linaje escogido, real sacerdocio, nación santa, pueblo adquirido por Dios, para que anunciéis las virtudes de aquel que os llamó de las tinieblas a su luz admirable), se puede inferir que este hace referentica a:?",
       options: [
         "Nuestra Historia",
-        "B:Nuestra verdadera identidad",
         "Todas Las Anteriores",
+        "Nuestro Proposito, Mision y Vision en esta tierra",
       ],
       answer: "Todas Las Anteriores",
     },
   ]),
   EN: shuffleArray([
     {
-      q: "Aptitud y actitud son dos palabras que guardan una relación intrínseca; la primera nos habla de los dones y talentos (capacidades) con las que nuestro Padre nos dotó, la otra nos habla de la disposición con la que ejercemos dichas capacidades. Es por eso que tu entrega, mi entrega, nuestra entrega dependen de poner al servicio de Dios tantos dones y talentos con la mejor disposición para que la obra del Señor sea llevada a cabo en el mundo entero.Con esta reseña en mente, te invitamos a resolver cada acertijo y descubrir el trasegar por la ruta de nuestra entrega a la misión como jóvenes en acción.Cada pregunta te dará la llave para descubrir MI - EN-TRE-GA como Club.",
+      q: "Conforme al escrito esta de 1 de Juan 3:1(Mirad cuál amor nos ha dado el Padre, para que seamos llamados hijos de Dios; por esto el mundo no nos conoce, porque no le conoció a él), se puede  afirmar que este hace alusión a:",
       options: [
-        "Nuestra Historia",
-        "Nuestra identidad",
+        "Nuestra verdadera identidad",
+        "Nuestra verdadera familia",
         "Nuestro Proposito, Mision y Vision en esta tierra",
       ],
       answer: [
